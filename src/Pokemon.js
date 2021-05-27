@@ -35,7 +35,7 @@ function PokemonList({poke,setPokeUrl}){
             <div className="card" style={{maxWidth: 500}}>
                 <img className="card-img-top" src={infosPokemon.sprites.front_default} alt="Card image cap" height="200" />
                 <div className="card-body" style={{color: 'black'}}>
-                    <p className="card-text">{infosPokemon.name}</p>
+                    <p className="card-text" style={{textTransform: "capitalize"}}>{infosPokemon.name}</p>
                 </div>
             </div>
         </>
@@ -67,9 +67,9 @@ function PokemonAllList({setPoke}){
     return(
         <>
             <h1>Choisissez un monstre</h1>
-            <select value={selectedValue} onChange={handleSelection}>
+            <select value={selectedValue} onChange={handleSelection} style={{textTransform: "capitalize"}}>
                 {pokemons.map(({id, name})=>(
-                    <option key={id} value={id}>
+                    <option key={id} value={id} style={{textTransform: "capitalize"}}>
                         {name}
                     </option>
                 ))}

@@ -36,8 +36,8 @@ function RMList({rm,setRMUrl}){
             <div className="card" style={{maxWidth: 500}}>
                 <img className="card-img-top" src={infosLocation.image} alt="Card image cap" height="200" />
                 <div className="card-body" style={{color: 'black'}}>
-                    <p className="card-text">{infosLocation.name}</p>
-                    <h5 className="card-title">{infosLocation.description}</h5>
+                    <h2 className="card-text" style={{textTransform: "capitalize"}}>{infosLocation.name}</h2>
+                    <h5 className="card-title" style={{textTransform: "capitalize"}}>{infosLocation.description}</h5>
 
                 </div>
             </div>
@@ -70,9 +70,9 @@ function RMtAllList({setRM}){
     return(
         <>
             <h1>Choisissez un monstre</h1>
-            <select value={selectedValue} onChange={handleSelection}>
+            <select value={selectedValue} onChange={handleSelection} style={{textTransform: "capitalize"}}>
                 {arts.map(({id, name})=>(
-                    <option key={id} value={id}>
+                    <option  key={id} value={id} style={{textTransform: "capitalize"}}>
                         {name}
                     </option>
                 ))}

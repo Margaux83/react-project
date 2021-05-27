@@ -14,7 +14,8 @@
       <change beforePath="$PROJECT_DIR$/../integrationweb/site1/grid.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../integrationweb/site1/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/../integrationweb/site1/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pokemon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zelda.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zelda.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wall/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wall/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wall/app/Http/Controllers/WallController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../wall/app/Http/Controllers/WallController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wall/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../wall/resources/views/layouts/app.blade.php" afterDir="false" />
@@ -79,7 +80,7 @@
       <workItem from="1621577792939" duration="8849000" />
       <workItem from="1622029474535" duration="4373000" />
       <workItem from="1622051184182" duration="629000" />
-      <workItem from="1622113477362" duration="1940000" />
+      <workItem from="1622113477362" duration="3605000" />
     </task>
     <servers />
   </component>

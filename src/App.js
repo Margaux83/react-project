@@ -49,7 +49,7 @@ function IndexContent(){
                         <div className="card-body text-primary">
                             <h5 className="card-text">Découvrez les monstres de l'univers Zelda Breath of The
                                 Wild</h5>
-                            <button type="button" className="btn btn-success"><a href="/zelda">See more</a></button>
+                            <button type="button" className="btn btn-success"><a style={{textDecoration: "none", color: "white"}} href="/zelda">See more</a></button>
                         </div>
                 </div>
                 <div className="card border-dark mb-3" style={{maxWidth: 400, margin: 2}}>
@@ -57,7 +57,7 @@ function IndexContent(){
                     <img className="card-img-top" src={`${process.env.PUBLIC_URL}/img/pokemon-logo.jpg`} alt="Card image cap" height="300" width="600"/>
                         <div className="card-body text-primary">
                             <h5 className="card-text">Découvrez les monstres de l'univers Pokémon</h5>
-                            <button type="button" className="btn btn-success"><a href="/pokemon">See more</a></button>
+                            <button type="button" className="btn btn-success"><a style={{textDecoration: "none", color: "white"}} href="/pokemon">See more</a></button>
                         </div>
                 </div>
             </div>
