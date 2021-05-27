@@ -11,9 +11,9 @@ function PokemonList({poke,setPokeUrl}){
         let lastCalled = true;
 
         const fetchData = async () => {
-            fetch(`https://botw-compendium.herokuapp.com/api/v2/entry/${poke}`)
+            fetch(`https://pokeapi.co/api/v2/pokemon/${poke}`)
                 .then((response) => response.json())
-                .then((data) => lastCalled && setInfosPokemon(data["species"]))
+                .then((data) => lastCalled && setInfosPokemon(data))
                 .catch((e) => console.error(e));
 
         };
@@ -33,7 +33,7 @@ function PokemonList({poke,setPokeUrl}){
         <>
             <div style={{height: 50}}></div>
             <div className="card" style={{maxWidth: 500}}>
-                <img className="card-img-top" alt="Card image cap" height="200" />
+                <img className="card-img-top" src={infosPokemon.sprites.front_default} alt="Card image cap" height="200" />
                 <div className="card-body" style={{color: 'black'}}>
                     <p className="card-text">{infosPokemon.name}</p>
                 </div>
@@ -49,7 +49,7 @@ function PokemonAllList({setPoke}){
     useEffect(() => {
         let lastCalled = true;
         const fetchTypes = () => {
-            fetch(`https://pokeapi.co/api/v2/pokemon/`)
+            fetch(`https://pokeapi.co/api/v2/pokemon/?limit=248&offset=248`)
                 .then((response) => response.json())
                 .then((results) => lastCalled && setPokemons(results["results"]));
         };

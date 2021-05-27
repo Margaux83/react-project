@@ -5,6 +5,7 @@ import React from "react"
 import Route from "./Route";
 import Zelda from "./Zelda"
 import Pokemon from "./Pokemon"
+import Combat from "./Combat"
 
 
 /*function Navbar(){
@@ -86,6 +87,9 @@ export default () => {
             </Route>
             <Route path="/pokemon">
                 <Pokemon />
+            </Route>
+            <Route path="/combat">
+                <Combat />
             </Route>
         </div>
     )
