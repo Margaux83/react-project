@@ -1,0 +1,42 @@
+.containerButton{
+    width: 100%;
+    display: flex;  justify-content: center;
+    align-content: center;
+
+}
+
+.buttonBeginCombat{
+
+    width: 300px;
+    padding: 10px;
+    border-radius: 50px;
+    border-style: none;
+    background-color: crimson;
+    color: white;
+    transition:0.5s;
+    font-size: 25px;
+    margin-top:10%;
+
+}
+
+.buttonBeginCombat:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+
+}
+
+.monsterBlock{
+    margin-top: 10%;
+    width: 100%;
+
+}
+
+.zeldaBlock{
+    width: 50%;
+    font-size: 25px;
+}
+
+.pokemonBlock{
+    width: 50%;
+    font-size: 50px;
+}
