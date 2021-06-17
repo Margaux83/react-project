@@ -74,7 +74,7 @@ function RandomMonsterZelda(){
 
 
 function RandomMonsterPokemon(){
-      const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState([]);
     const [onePost, setOnePost] = useState('');
     const [combatpokemon, setCombatpokemon] = useState({});
 
@@ -127,15 +127,15 @@ function RandomMonsterPokemon(){
 
     return (
         <>
-        <div>
+            <div>
                <span>
 
                     {onePost.name}
            </span><br/>
-            {( Object.entries(combatpokemon).length !== 0) ?
-            <img className="card-img-top"  src={combatpokemon.sprites.front_default} alt="Card image cap" width="50" height="500" />
-                : ""}
-            <button className="generateMonster" onClick={handleClick}>Générer un autre monstre Zelda</button>
+                {( Object.entries(combatpokemon).length !== 0) ?
+                    <img className="card-img-top"  src={combatpokemon.sprites.front_default} alt="Card image cap" width="10" height="500" />
+                    : ""}
+                <button className="generateMonster" onClick={handleClick}>Générer un autre monstre Zelda</button>
 
 
             </div>
@@ -149,12 +149,12 @@ function MonsterBlock(){
         <>
             <div className="row">
                 <div className="card col mb-4 center">
-                <p style={{fontSize:25}}>Monstre Zelda</p>
+                    <p style={{fontSize:25}}>Monstre Zelda</p>
                     <RandomMonsterZelda></RandomMonsterZelda>
                 </div>
                 <br/><br/><br/>
                 <div className="card col mb-4 center" >
-                <p style={{fontSize:25}}>Monstre Pokémon</p>
+                    <p style={{fontSize:25}}>Monstre Pokémon</p>
                     <RandomMonsterPokemon></RandomMonsterPokemon>
                 </div>
             </div>
@@ -171,7 +171,7 @@ function BeginCombat(){
                 <MonsterBlock></MonsterBlock>
             </div>
             <div className="containerButton h-100">
-                        <button className="buttonBeginCombat"  type={"submit"} >Lancer un combat</button>
+                <button className="buttonBeginCombat"  type={"submit"} >Lancer un combat</button>
             </div>
 
 
@@ -182,8 +182,9 @@ function BeginCombat(){
 function Combat() {
 
     return (
-                <BeginCombat></BeginCombat>
+        <BeginCombat></BeginCombat>
     );
 }
+
 
 export default Combat;

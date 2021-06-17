@@ -2,7 +2,13 @@ import logo from './logo.svg';
 import './App.css';
 import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import PokemonOne from "./PokemonOne";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 function PokemonList({poke,setPokeUrl}){
     let [infosPokemon, setInfosPokemon] = useState({});
@@ -54,6 +60,7 @@ function PokemonAllList({setPoke}){
                 .then((results) => lastCalled && setPokemons(results["results"]));
         };
         fetchTypes();
+
         return () => {
             lastCalled = false;
         };
@@ -64,33 +71,40 @@ function PokemonAllList({setPoke}){
         setSelectedValue(event.target.value);
     }
 
+
+
     return(
         <>
-            <h1>Choisissez un monstre</h1>
-            <select value={selectedValue} onChange={handleSelection} style={{textTransform: "capitalize"}}>
-                {pokemons.map(({id, name})=>(
-                    <option key={id} value={id} style={{textTransform: "capitalize"}}>
-                        {name}
-                    </option>
+
+            <h1>Les monstres pokemon</h1>
+
+                {pokemons.map(({name})=>(
+                    <div>
+                        <Link to={`/detail-pokemon/${name}`}>
+                            <h2>{name}</h2>
+                        </Link>
+                    </div>
+
+
                 ))}
-            </select>
 
         </>
     )
 }
 
 function Pokemon() {
-
     let [selectedPoke, setSelectedPoke] = useState("");
     let [selectedRMUrl, setSelectedPokeUrl] = useState(null);
     return (
         <div className="App">
             <header className="App-header">
-                <PokemonAllList setPoke={setSelectedPoke}></PokemonAllList>
-                <PokemonList poke={selectedPoke} setPokeUrl={setSelectedPokeUrl}></PokemonList>
+            <PokemonAllList setPoke={setSelectedPoke}></PokemonAllList>
+            <PokemonList poke={selectedPoke} setPokeUrl={setSelectedPokeUrl}></PokemonList>
             </header>
         </div>
     );
 }
+
+
 
 export default Pokemon;
