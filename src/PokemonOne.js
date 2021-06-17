@@ -47,9 +47,11 @@ function PokemonList({poke}){
 function PokemonOne() {
     const { name } = useParams();
     return (
-        <>
+            <div className="App">
+                <header className="App-header">
             <PokemonList poke={ name } ></PokemonList>
-        </>
+                </header>
+            </div>
     );
 }
 
