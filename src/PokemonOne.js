@@ -2,8 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import './Combat.css';
 import React, {useState, useEffect} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { useParams } from "react-router-dom";
 
 function PokemonList({poke}){
     let [detailPokemon, setDetailPokemon] = useState({});
@@ -44,12 +42,23 @@ function PokemonList({poke}){
     )
 }
 
+
+
 function PokemonOne() {
-    const { name } = useParams();
+    let [ name, setName] = useState("");
+    function findGetParameter(parameterName, defaultValue) {
+        return new URLSearchParams(window.location.search).get(parameterName) ?? defaultValue;
+    }
+
+    useEffect(function() {
+        setName(findGetParameter('name', 'fr'));
+    }, []);
+
+
     return (
             <div className="App">
                 <header className="App-header">
-            <PokemonList poke={ name } ></PokemonList>
+            <PokemonList  poke={ name } ></PokemonList>
                 </header>
             </div>
     );

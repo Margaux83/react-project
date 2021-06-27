@@ -13,7 +13,15 @@
       <change beforePath="$PROJECT_DIR$/../integrationweb/site1/css/style_float.css" beforeDir="false" afterPath="$PROJECT_DIR$/../integrationweb/site1/css/style_float.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../integrationweb/site1/grid.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../integrationweb/site1/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/../integrationweb/site1/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/react-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/react-project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Combat.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Combat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pokemon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pokemon.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PokemonOne.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/PokemonOne.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Zelda.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Zelda.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wall/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../wall/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wall/app/Http/Controllers/WallController.php" beforeDir="false" afterPath="$PROJECT_DIR$/../wall/app/Http/Controllers/WallController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../wall/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/../wall/resources/views/layouts/app.blade.php" afterDir="false" />
@@ -51,7 +59,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -86,7 +94,12 @@
       <workItem from="1623412086329" duration="177000" />
       <workItem from="1623492662203" duration="12528000" />
       <workItem from="1623608993414" duration="9296000" />
-      <workItem from="1623956435888" duration="10349000" />
+      <workItem from="1623956435888" duration="10616000" />
+      <workItem from="1624120024548" duration="1068000" />
+      <workItem from="1624202900228" duration="5197000" />
+      <workItem from="1624720367753" duration="4493000" />
+      <workItem from="1624735291654" duration="3226000" />
+      <workItem from="1624796346951" duration="1586000" />
     </task>
     <servers />
   </component>

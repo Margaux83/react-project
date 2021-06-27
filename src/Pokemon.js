@@ -1,20 +1,16 @@
 import logo from './logo.svg';
-import './App.css';
+import './Pokemon.css';
 import React, {useState, useEffect} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import PokemonOne from "./PokemonOne";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import Route from "./Route";
+import Link from "./Link";
+
 
 
 
 function PokemonAllList({setPoke}){
     let [pokemons, setPokemons] = useState([]);
-    let [selectedValue, setSelectedValue] = useState("");
+    let [ setSelectedValue] = useState("");
 
     useEffect(() => {
         let lastCalled = true;
@@ -30,26 +26,23 @@ function PokemonAllList({setPoke}){
         };
     }, []);
 
-    const handleSelection = (event) => {
-        setPoke(event.target.value);
-        setSelectedValue(event.target.value);
-    }
-
 
 
     return(
         <>
 
-            <h1>Les monstres pokemon</h1>
+
+            <h2 style={{color: "black"}}>Liste des pokémons :</h2>
+
 
                 {pokemons.map(({name})=>(
                     <div>
-                        <Link className="nav-link active text-dark" to={`/detail-pokemon/${name}`}>
-                            <h2>{name}</h2>
-                        </Link>
+
+                      <Link className="nav-link active text-dark display_img" href={`/detail-pokemon?name=${name}`}>
+                          <h4 style={{textTransform: "capitalize", color: "black"}}>{name}</h4>
+                      </Link>
+
                     </div>
-
-
                 ))}
 
         </>
@@ -57,8 +50,7 @@ function PokemonAllList({setPoke}){
 }
 
 function Pokemon() {
-    let [selectedPoke, setSelectedPoke] = useState("");
-    let [selectedRMUrl, setSelectedPokeUrl] = useState(null);
+    let [ setSelectedPoke] = useState("");
     return (
         <div className="App">
             <header className="App-header">

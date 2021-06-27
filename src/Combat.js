@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 import './Combat.css';
 import React, {useState, useEffect} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Pokemon from "./Pokemon";
 
 function RandomMonsterZelda(){
@@ -61,8 +60,10 @@ function RandomMonsterZelda(){
                     {onePost.name}
            </span><br/>
                 {( Object.entries(combatzelda).length !== 0) ?
-                    <img className="card-img-top"  src={combatzelda.image} alt="Card image cap" width="100" height="500" />
+                    <img  src={combatzelda.image} alt="Card image cap" width="300" height="300" />
                     : ""}
+                <h4  style={{textTransform: "capitalize", color: "black"}}>{combatzelda.name}</h4>
+                <br/>
                 <button className="generateMonster" onClick={handleClick}>Générer un autre monstre Zelda</button>
 
 
@@ -119,7 +120,7 @@ function RandomMonsterPokemon(){
 
     if (!onePost.name){
         return <>  <div>
-            <button className="generateMonster" onClick={handleClick}>Générer un monstre pokémon</button>
+            <button className="generateMonster" onClick={handleClick}>Générer un pokémon</button>
 
 
         </div></>;
@@ -133,9 +134,11 @@ function RandomMonsterPokemon(){
                     {onePost.name}
            </span><br/>
                 {( Object.entries(combatpokemon).length !== 0) ?
-                    <img className="card-img-top"  src={combatpokemon.sprites.front_default} alt="Card image cap" width="10" height="500" />
+                    <img  src={combatpokemon.sprites.front_default} alt="Card image cap" width="300" height="300"  />
                     : ""}
-                <button className="generateMonster" onClick={handleClick}>Générer un autre monstre Zelda</button>
+                <h4 style={{textTransform: "capitalize", color: "black"}}>{combatpokemon.name}</h4>
+                <br/>
+                <button className="generateMonster" onClick={handleClick}>Générer un autre pokémon</button>
 
 
             </div>
@@ -145,17 +148,26 @@ function RandomMonsterPokemon(){
 
 
 function MonsterBlock(){
+
+
+
+
+
     return(
         <>
             <div className="row">
-                <div className="card col mb-4 center">
-                    <p style={{fontSize:25}}>Monstre Zelda</p>
-                    <RandomMonsterZelda></RandomMonsterZelda>
+                <div className="col-6">
+                    <div className="card col mb-4 center">
+                        <p style={{fontSize:25, color: "black"}}>Monstre Zelda</p>
+                        <RandomMonsterZelda></RandomMonsterZelda>
+                    </div>
                 </div>
                 <br/><br/><br/>
-                <div className="card col mb-4 center" >
-                    <p style={{fontSize:25}}>Monstre Pokémon</p>
-                    <RandomMonsterPokemon></RandomMonsterPokemon>
+                <div className="col-6">
+                    <div className="card col mb-4 center" >
+                        <p style={{fontSize:25, color: "black"}}>Monstre Pokémon</p>
+                        <RandomMonsterPokemon></RandomMonsterPokemon>
+                    </div>
                 </div>
             </div>
         </>
@@ -172,7 +184,7 @@ function BeginCombat(){
             </div>
             <div className="containerButton h-100">
                 <button className="buttonBeginCombat"  type={"submit"} >Lancer un combat</button>
-            </div>
+            </div><br/>
 
 
         </>
@@ -182,7 +194,11 @@ function BeginCombat(){
 function Combat() {
 
     return (
-        <BeginCombat></BeginCombat>
+        <div className="App">
+            <header className="App-header">
+                 <BeginCombat></BeginCombat>
+            </header>
+        </div>
     );
 }
 
