@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import './style/App.css';
 import React from "react"
-import Zelda from "./Zelda"
-import Combat from "./Combat"
-import Pokemon from "./Pokemon"
-import PokemonOne from "./PokemonOne";
-import Route from "./Route"
-import Link from "./Link";
-
-
-
-
-
-
+import Zelda from "./components/Zelda"
+import Combat from "./components/Combat"
+import Pokemon from "./components/Pokemon"
+import PokemonOne from "./components/PokemonOne";
+import Route from "./router/Route"
 
 
 export default function App() {
     return (
         <div className="ui container">
             <Route path="/">
-                <App />
+                <Home />
             </Route>
             <Route path="/zelda">
                 <Zelda />
@@ -47,6 +39,7 @@ function Home() {
         </div>
     );
 }
+
 function IndexContent(){
     return (
         <>
@@ -62,7 +55,7 @@ function IndexContent(){
                     </div>
                     <div className="card border-dark mb-3" style={{maxWidth: 400, margin: 2}}>
                         <div className="card-header"><h2 style={{color: "black"}}>Pokemon monsters</h2></div>
-                        <img className="card-img-top" src={`${process.env.PUBLIC_URL}/img/pokemon-logo.jpg`} alt="Card image cap" height="300" width="600"/>
+                        <img className="card-img-top" src={`react-project/public/img/pokemon-logo.jpg`} alt="Card image cap" height="300" width="600"/>
                         <div className="card-body text-primary">
                             <h5 className="card-text">Api qui contient des informations sur les pokémons (liste des prokémons, images, stats, et.)</h5>
                             <button type="button" className="btn btn-success"><a style={{textDecoration: "none", color: "white"}} href="/pokemon">See more</a></button>

@@ -1,8 +1,6 @@
-import logo from './logo.svg';
-import './App.css';
-import './Combat.css';
+import '../style/App.css';
+import '../style/Combat.css';
 import React, {useState, useEffect} from 'react';
-import Pokemon from "./Pokemon";
 
 function RandomMonsterZelda(){
     const [posts, setPosts] = useState([]);
@@ -148,11 +146,6 @@ function RandomMonsterPokemon(){
 
 
 function MonsterBlock(){
-
-
-
-
-
     return(
         <>
             <div className="row">

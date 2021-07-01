@@ -1,6 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
-import './Combat.css';
+import '../style/App.css';
+import '../style/Combat.css';
 import React, {useState, useEffect} from 'react';
 
 function PokemonList({poke}){
@@ -58,7 +57,7 @@ function PokemonOne() {
     return (
             <div className="App">
                 <header className="App-header">
-            <PokemonList  poke={ name } ></PokemonList>
+                    <PokemonList  poke={ name } ></PokemonList>
                 </header>
             </div>
     );

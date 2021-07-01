@@ -1,16 +1,13 @@
-import logo from './logo.svg';
-import './Pokemon.css';
+import logo from '../logo.svg';
+import '../style/Pokemon.css';
 import React, {useState, useEffect} from 'react';
-import PokemonOne from "./PokemonOne";
-import Route from "./Route";
-import Link from "./Link";
+import Link from "../router/Link";
 
 
 
 
 function PokemonAllList({setPoke}){
     let [pokemons, setPokemons] = useState([]);
-    let [ setSelectedValue] = useState("");
 
     useEffect(() => {
         let lastCalled = true;

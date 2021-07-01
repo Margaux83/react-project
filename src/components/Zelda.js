@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+import '../style/App.css';
 import React, {useState, useEffect} from 'react';
 
 
@@ -85,7 +84,7 @@ function RMtAllList({setRM}){
 function Zelda() {
 
     let [selectedRM, setSelectedRM] = useState("");
-    let [selectedRMUrl, setSelectedRMUrl] = useState(null);
+    let [setSelectedRMUrl] = useState(null);
 
     return (
         <div className="App">
