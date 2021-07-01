@@ -2,17 +2,55 @@ import '../style/App.css';
 import '../style/Combat.css';
 import React, {useState, useEffect} from 'react';
 
-function RandomMonsterZelda(){
-    const [posts, setPosts] = useState([]);
-    const [onePost, setOnePost] = useState('');
+function MonsterBlock(){
+    const [pokemons, setPokemons] = useState([]);
+    const [onePokemon, setOnePokemeon] = useState('');
+    const [combatpokemon, setCombatpokemon] = useState({});
+
+
+    const [zeldas, setZeldas] = useState([]);
+    const [oneZelda, setOneZelda] = useState('');
     const [combatzelda, setCombatzelda] = useState({});
+
+    ////////////////////useEffect Pokemon///////////////////
+    useEffect(() => {
+        let lastCalled = true;
+        const fetchTypes = () => {
+            fetch(`https://pokeapi.co/api/v2/pokemon/?limit=248&offset=248`)
+                .then((response) => response.json())
+                .then((results) => lastCalled && setPokemons(results["results"]));
+        };
+        fetchTypes();
+        return () => {
+            lastCalled = false;
+        };
+    }, []);
+
+    useEffect(() => {
+        let lastCalled = true;
+        const fetchData = async () => {
+            fetch(`https://pokeapi.co/api/v2/pokemon/${onePokemon.name}`)
+                .then((response) => response.json())
+                .then((data) => lastCalled && setCombatpokemon(data))
+                .catch((e) => console.error(e));
+
+        };
+
+
+        fetchData();
+        return () => {
+            lastCalled = false;
+        };
+    }, [onePokemon.name]);
+
+////////////Use effect Zelda//////////////////
 
     useEffect(() => {
         let lastCalled = true;
         const fetchTypes = () => {
             fetch(`https://botw-compendium.herokuapp.com/api/v2/category/monsters`)
                 .then((response) => response.json())
-                .then((results) => lastCalled && setPosts(results["data"]));
+                .then((results) => lastCalled && setZeldas(results["data"]));
         };
         fetchTypes();
         return () => {
@@ -24,7 +62,7 @@ function RandomMonsterZelda(){
     useEffect(() => {
         let lastCalled = true;
         const fetchData = async () => {
-            fetch(`https://botw-compendium.herokuapp.com/api/v2/entry/${onePost.name}`)
+            fetch(`https://botw-compendium.herokuapp.com/api/v2/entry/${oneZelda.name}`)
                 .then((response) => response.json())
                 .then((data) => lastCalled && setCombatzelda(data["data"]))
                 .catch((e) => console.error(e));
@@ -34,162 +72,104 @@ function RandomMonsterZelda(){
         return () => {
             lastCalled = false;
         };
-    }, [onePost.name]);
+    }, [oneZelda.name]);
 
 
-    const handleClick = () => {
-        const random = posts[Math.floor(Math.random() * posts.length)];
-        setOnePost(random);//value assigned here
+    const handleClickPokemon = () => {
+        const random = pokemons[Math.floor(Math.random() * pokemons.length)];
+        setOnePokemeon(random);//value assigned here
     };
 
-    if (!onePost.name){
-        return <>  <div>
-            <button className="generateMonster" onClick={handleClick}>Générer un monstre Zelda</button>
-
-
-        </div></>;
-    }
-
-    return (
-        <>
-            <div>
-               <span>
-
-                    {onePost.name}
-           </span><br/>
-                {( Object.entries(combatzelda).length !== 0) ?
-                    <img  src={combatzelda.image} alt="Card image cap" width="300" height="300" />
-                    : ""}
-                <h4  style={{textTransform: "capitalize", color: "black"}}>{combatzelda.name}</h4>
-                <br/>
-                <button className="generateMonster" onClick={handleClick}>Générer un autre monstre Zelda</button>
-
-
-            </div>
-        </>
-    );
-}
-
-
-
-function RandomMonsterPokemon(){
-    const [posts, setPosts] = useState([]);
-    const [onePost, setOnePost] = useState('');
-    const [combatpokemon, setCombatpokemon] = useState({});
-
-    useEffect(() => {
-        let lastCalled = true;
-        const fetchTypes = () => {
-            fetch(`https://pokeapi.co/api/v2/pokemon/?limit=248&offset=248`)
-                .then((response) => response.json())
-                .then((results) => lastCalled && setPosts(results["results"]));
-        };
-        fetchTypes();
-        return () => {
-            lastCalled = false;
-        };
-    }, []);
-
-    useEffect(() => {
-        let lastCalled = true;
-        const fetchData = async () => {
-            fetch(`https://pokeapi.co/api/v2/pokemon/${onePost.name}`)
-                .then((response) => response.json())
-                .then((data) => lastCalled && setCombatpokemon(data))
-                .catch((e) => console.error(e));
-
-        };
-
-
-        fetchData();
-        console.log(combatpokemon);
-        return () => {
-            lastCalled = false;
-        };
-    }, [onePost.name]);
-
-
-
-
-    const handleClick = () => {
-        const random = posts[Math.floor(Math.random() * posts.length)];
-        setOnePost(random);//value assigned here
+    const handleClickZelda = () => {
+        const random = zeldas[Math.floor(Math.random() * zeldas.length)];
+        setOneZelda(random);//value assigned here
     };
 
-    if (!onePost.name){
-        return <>  <div>
-            <button className="generateMonster" onClick={handleClick}>Générer un pokémon</button>
 
-
-        </div></>;
+    /*
+    On génère le premier pokémon
+     */
+    if (!onePokemon.name){
+        return(
+            <>
+                <div>
+                    <button className="generateMonster" onClick={handleClickPokemon}>Générer un pokémon</button>
+                </div>
+            </>
+    )
     }
 
-    return (
-        <>
-            <div>
-               <span>
 
-                    {onePost.name}
-           </span><br/>
-                {( Object.entries(combatpokemon).length !== 0) ?
-                    <img  src={combatpokemon.sprites.front_default} alt="Card image cap" width="300" height="300"  />
-                    : ""}
-                <h4 style={{textTransform: "capitalize", color: "black"}}>{combatpokemon.name}</h4>
-                <br/>
-                <button className="generateMonster" onClick={handleClick}>Générer un autre pokémon</button>
-
-
-            </div>
-        </>
-    );
-}
+    /*
+    On génère le premier monstre zelda
+     */
+    if (!oneZelda.name){
+        return(
+            <>
+                <div>
+                    <button className="generateMonster" onClick={handleClickZelda}>Générer un monstre Zelda</button>
+                </div>
+            </>
+        )
+    }
 
 
-function MonsterBlock(){
     return(
         <>
+            <div className="monsterBlock text-center">
             <div className="row">
                 <div className="col-6">
                     <div className="card col mb-4 center">
                         <p style={{fontSize:25, color: "black"}}>Monstre Zelda</p>
-                        <RandomMonsterZelda></RandomMonsterZelda>
+                        <div>
+                           <span>
+                                {oneZelda.name}
+                            </span>
+                            <br/>
+                            {( Object.entries(combatzelda).length !== 0) ?
+                                <img  src={combatzelda.image} alt="Card image cap" width="300" height="300" />
+                                : ""}
+                            <h4  style={{textTransform: "capitalize", color: "black"}}>{combatzelda.name}</h4>
+                            <br/>
+                            <button className="generateMonster" onClick={handleClickZelda}>Générer un autre monstre Zelda</button>
+                        </div>
                     </div>
                 </div>
                 <br/><br/><br/>
                 <div className="col-6">
                     <div className="card col mb-4 center" >
                         <p style={{fontSize:25, color: "black"}}>Monstre Pokémon</p>
-                        <RandomMonsterPokemon></RandomMonsterPokemon>
+                        <div>
+                           <span>
+                                {onePokemon.name}
+                           </span>
+                            <br/>
+                            {( Object.entries(combatpokemon).length !== 0) ?
+                                <img  src={combatpokemon.sprites.front_default} alt="Card image cap" width="300" height="300"  />
+                                : ""}
+                            <h4 style={{textTransform: "capitalize", color: "black"}}>{combatpokemon.name}</h4>
+                            <br/>
+                            <button className="generateMonster" onClick={handleClickPokemon}>Générer un autre pokémon</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </>
-    )
-}
-
-
-function BeginCombat(){
-
-    return (
-        <>
-            <div className="monsterBlock text-center">
-                <MonsterBlock></MonsterBlock>
+                <div className="containerButton h-100">
+                    <button className="buttonBeginCombat"  type={"submit"} >Lancer un combat</button>
+                </div>
+                <br/>
             </div>
-            <div className="containerButton h-100">
-                <button className="buttonBeginCombat"  type={"submit"} >Lancer un combat</button>
-            </div><br/>
-
-
         </>
     )
 }
+
 
 function Combat() {
 
     return (
         <div className="App">
             <header className="App-header">
-                 <BeginCombat></BeginCombat>
+                <MonsterBlock></MonsterBlock>
             </header>
         </div>
     );
