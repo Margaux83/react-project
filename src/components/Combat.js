@@ -2,6 +2,7 @@ import '../style/App.css';
 import '../style/Combat.css';
 import React, {useState, useEffect} from 'react';
 
+
 function MonsterBlock(){
     const [pokemons, setPokemons] = useState([]);
     const [onePokemon, setOnePokemeon] = useState('');
@@ -113,6 +114,30 @@ function MonsterBlock(){
         )
     }
 
+    function calc_winner() {
+        let randomZelda = Math.floor(Math.random() * 3);
+        let randomPokemon = Math.floor(Math.random() * 3);
+
+        if (randomZelda > randomPokemon) {
+            return 'zelda'
+        } else {
+            return 'pokemon'
+        }
+    }
+
+    function getWinner() {
+        var winbtn = document.querySelector('#win_btn');
+
+        var win = calc_winner()
+
+        return (
+            <>
+                <div>
+                    <h1 style={{color: "black"}}>Le vainqueur est le {win == 'pokemon' ?   winbtn.dataset.pokemonname : winbtn.dataset.zeldaname}</h1>
+                </div>
+            </>
+        )
+    }
 
     return(
         <>
@@ -155,8 +180,9 @@ function MonsterBlock(){
                 </div>
             </div>
                 <div className="containerButton h-100">
-                    <button className="buttonBeginCombat"  type={"submit"} >Lancer un combat</button>
+                    <button className="buttonBeginCombat" id="win_btn" data-pokemonname={combatpokemon.name} data-zeldaname={combatzelda.name} onClick={getWinner} type={"submit"} >Lancer un combat</button>
                 </div>
+                
                 <br/>
             </div>
         </>
