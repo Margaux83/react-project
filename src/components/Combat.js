@@ -115,8 +115,10 @@ function MonsterBlock(){
     }
 
     function calc_winner() {
-        let randomZelda = Math.floor(Math.random() * 3);
-        let randomPokemon = Math.floor(Math.random() * 3);
+        let randomZelda = Math.floor(Math.random() * 4);
+        let randomPokemon = Math.floor(Math.random() * 4);
+        console.log(randomZelda);
+        console.log(randomPokemon);
 
         if (randomZelda > randomPokemon) {
             return 'zelda'
@@ -129,6 +131,7 @@ function MonsterBlock(){
         var winbtn = document.querySelector('#win_btn');
 
         var win = calc_winner()
+        console.log(win);
 
         return (
             <>

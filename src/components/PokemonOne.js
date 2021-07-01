@@ -45,12 +45,12 @@ function PokemonList({poke}){
 
 function PokemonOne() {
     let [ name, setName] = useState("");
-    function findGetParameter(parameterName, defaultValue) {
+    //Récupération du nom du pokémon passé en paramètre dans l'url
+    function getParameter(parameterName, defaultValue) {
         return new URLSearchParams(window.location.search).get(parameterName) ?? defaultValue;
     }
-
     useEffect(function() {
-        setName(findGetParameter('name', 'fr'));
+        setName(getParameter('name', 'fr'));
     }, []);
 
 
