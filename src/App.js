@@ -50,7 +50,7 @@ function IndexContent(){
                         <img className="card-img-top" src={`${process.env.PUBLIC_URL}/img/zelda-logo.jpg`}  alt="Card image cap" height="300" width="600"/>
                         <div className="card-body text-primary">
                             <h5 className="card-text">Api qui contient des informations sur l'univers de Zelda Breath of the Wild (tels que les monstres, les armes, les animaux, etc.), ici j'ai utilisé les informations sur les monstres.</h5>
-                            <button type="button" className="btn btn-success"><a style={{textDecoration: "none", color: "white"}} href="/zelda">See more</a></button>
+                            <button type="button" className="btn btn-success"><a style={{textDecoration: "none", color: "white"}} href="/zelda">Découvrir</a></button>
                         </div>
                     </div>
                     <div className="card border-dark mb-3" style={{maxWidth: 400, margin: 2}}>
@@ -58,7 +58,7 @@ function IndexContent(){
                         <img className="card-img-top" src={`${process.env.PUBLIC_URL}/img/index.jpeg`} alt="Card image cap" height="300" width="600"/>
                         <div className="card-body text-primary">
                             <h5 className="card-text">Api qui contient des informations sur les pokémons (liste des prokémons, images, stats, et.)</h5>
-                            <button type="button" className="btn btn-success"><a style={{textDecoration: "none", color: "white"}} href="/pokemon">See more</a></button>
+                            <button type="button" className="btn btn-success"><a style={{textDecoration: "none", color: "white"}} href="/pokemon">Découvrir</a></button>
                         </div>
                     </div>
                 </div>

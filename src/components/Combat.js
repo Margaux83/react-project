@@ -120,6 +120,7 @@ function MonsterBlock(){
         console.log(randomZelda);
         console.log(randomPokemon);
 
+
         if (randomZelda > randomPokemon) {
             return 'zelda'
         } else {
@@ -130,8 +131,16 @@ function MonsterBlock(){
     function getWinner() {
         var winbtn = document.querySelector('#win_btn');
 
-        var win = calc_winner()
-        console.log(win);
+        var win = calc_winner();
+
+        if(win == "zelda"){
+            console.log( winbtn.dataset.zeldaname);
+            console.log( winbtn.dataset.zeldaimg);
+        }
+        else{
+            console.log(winbtn.dataset.pokemonname);
+            console.log(winbtn.dataset.pokemonimg);
+        }
 
         return (
             <>
@@ -183,7 +192,7 @@ function MonsterBlock(){
                 </div>
             </div>
                 <div className="containerButton h-100">
-                    <button className="buttonBeginCombat" id="win_btn" data-pokemonname={combatpokemon.name} data-zeldaname={combatzelda.name} onClick={getWinner} type={"submit"} >Lancer un combat</button>
+                    <button className="buttonBeginCombat" id="win_btn" data-pokemonname={combatpokemon.name} data-pokemonimg={combatpokemon.sprites.front_default} data-zeldaname={combatzelda.name} data-zeldaimg={combatzelda.image} onClick={getWinner} type={"submit"} >Lancer un combat</button>
                 </div>
                 
                 <br/>
